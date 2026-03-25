@@ -1,1 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HVAC & Refrigeration Services in Florida | TPS Climate Solutions</title>
+<meta name="description" content="TPS Climate Solutions provides residential and commercial HVAC and refrigeration services across Tampa Bay. Licensed, insured, and backed by The Purple Standard.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lexend+Exa:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-dark:       #1a1a1a;
+    --brand-medium:     #333333;
+    --brand-accent:     #666666;
+    --brand-light:      #999999;
+    --brand-highlight:  #555555;
+    --white:            #ffffff;
+    --black:            #000000;
+    --light-bg:         #f5f5f5;
+    --lighter-bg:       #fafafa;
+    --border-color:     #e0e0e0;
+    --border-light:     #eeeeee;
+    --text-primary:     #1a1a1a;
+    --text-secondary:   #555555;
+    --text-muted:       #888888;
+    --text-hint:        #aaaaaa;
+  }
 
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-primary);
+    background: var(--white);
+    line-height: 1.7;
+    font-weight: 400;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.25;
+    font-weight: 600;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; height: auto; display: block; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  section { padding: 100px 48px; }
+
+  .section-label {
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 2px; text-transform: uppercase;
+    color: var(--brand-accent);
+    margin-bottom: 12px; display: inline-block;
+  }
+
+  .section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px; font-weight: 600;
+    text-transform: uppercase;
+    color: var(--brand-dark);
+    margin-bottom: 20px; letter-spacing: -0.5px;
+  }
+
+  .section-subtitle {
+    font-size: 17px; color: var(--text-secondary);
+    line-height: 1.75; max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+  .stagger-1 { transition-delay: 0.1s; }
+  .stagger-2 { transition-delay: 0.2s; }
+  .stagger-3 { transition-delay: 0.3s; }
+  .stagger-4 { transition-delay: 0.4s; }
+
+  /* ── NAV ─────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100; background: var(--brand-dark);
+    padding: 0 48px; height: 72px;
+    display: flex; align-items: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .nav-container {
+    width: 100%; max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 36px; height: 36px; background: var(--white);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo-icon svg { width: 20px; height: 20px; }
+
+  .nav-logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; font-size: 17px;
+    color: var(--white); letter-spacing: -0.3px;
+  }
+
+  .nav-links {
+    display: flex; gap: 32px; align-items: center; list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75); text-decoration: none;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--white) !important; color: var(--brand-dark) !important;
+    padding: 10px 24px; border-radius: 6px; font-weight: 600 !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+  .nav-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.2);
+  }
+
+  .nav-hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .nav-hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--white); border-radius: 2px; transition: all 0.3s;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ── HERO ─────────────────────────────────────── */
+  .hero {
+    margin-top: 72px; background: var(--brand-dark);
+    position: relative; overflow: hidden;
+    min-height: 600px; display: flex; align-items: center;
+  }
+
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 40%, rgba(255,255,255,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: ''; position: absolute; inset: 0; opacity: 0.03;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.5) 59px, rgba(255,255,255,0.5) 60px),
+      repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.5) 59px, rgba(255,255,255,0.5) 60px);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; padding: 80px 48px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 100px; padding: 6px 18px; margin-bottom: 28px;
+    font-family: 'Lexend Exa', sans-serif;
+    font-size: 10px; font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 1.5px; text-transform: uppercase;
+  }
+  .hero-badge svg { width: 12px; height: 12px; stroke: rgba(255,255,255,0.5); flex-shrink: 0; }
+
+  .hero h1 {
+    font-size: clamp(36px, 4.5vw, 52px); font-weight: 800;
+    text-transform: uppercase; color: var(--white);
+    margin-bottom: 24px; letter-spacing: -1px;
+  }
+  .hero h1 em { font-style: normal; color: rgba(255,255,255,0.5); }
+
+  .hero-desc {
+    font-size: 18px; color: rgba(255,255,255,0.7);
+    line-height: 1.8; max-width: 520px; margin-bottom: 36px;
+  }
+
+  .hero-ctas { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px; background: var(--white); color: var(--brand-dark);
+    border: none; border-radius: 8px;
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600;
+    text-decoration: none; cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+  .btn-primary svg { width: 18px; height: 18px; }
+
+  .btn-outline {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 16px 32px; background: transparent; color: var(--white);
+    border: 2px solid rgba(255,255,255,0.2); border-radius: 8px;
+    font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600;
+    text-decoration: none; cursor: pointer; transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.4); transform: translateY(-2px); }
+  .btn-outline svg { width: 18px; height: 18px; }
+
+  .hero-photo {
+    background: rgba(255,255,255,0.04); border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.2); font-family: 'Poppins', sans-serif;
+    font-size: 14px; text-align: center; padding: 24px;
+    position: relative; overflow: hidden;
+  }
+  .hero-photo::before {
+    content: ''; position: absolute;
+    top: -1px; left: -1px; right: -1px; bottom: -1px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), transparent 40%, transparent 60%, rgba(255,255,255,0.05));
+    pointer-events: none;
+  }
+
+  .photo-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+  }
+  .photo-placeholder svg { width: 32px; height: 32px; opacity: 0.4; }
+
+  /* ── TRUST BAR ──────────────────────────────── */
+  .trust-bar {
+    background: var(--lighter-bg); padding: 0 48px;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .trust-bar-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: center; align-items: center;
+    gap: 64px; flex-wrap: wrap; padding: 28px 0;
+  }
+
+  .trust-item { display: flex; align-items: center; gap: 12px; }
+
+  .trust-icon {
+    width: 40px; height: 40px; background: var(--white);
+    border: 1px solid var(--border-color); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .trust-icon svg {
+    width: 20px; height: 20px; stroke: var(--brand-medium);
+    fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .trust-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; font-weight: 600; color: var(--brand-dark);
+  }
+
+  /* ── ABOUT SECTION ──────────────────────────── */
+  .about-section { background: var(--white); }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+
+  .about-text p {
+    font-size: 16px; color: var(--text-secondary);
+    line-height: 1.85; margin-bottom: 20px;
+  }
+  .about-text p:last-child { margin-bottom: 0; }
+
+  .about-image {
+    background: var(--light-bg); border-radius: 14px;
+    aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+    color: var(--text-hint); font-size: 14px; font-family: 'Poppins', sans-serif;
+    border: 1px solid var(--border-light); position: relative; overflow: hidden;
+  }
+  .about-image::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-dark), var(--brand-accent), var(--brand-light));
+  }
+
+  /* ── RESIDENTIAL SERVICES ──────────────────── */
+  .residential-section { background: var(--light-bg); }
+
+  .res-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px; font-weight: 700;
+    text-transform: uppercase; color: var(--brand-dark);
+    margin-bottom: 8px; letter-spacing: -0.5px;
+  }
+
+  .res-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px; font-weight: 500;
+    color: var(--brand-accent); margin-bottom: 12px;
+  }
+
+  .res-desc {
+    font-size: 16px; color: var(--text-secondary);
+    line-height: 1.75; max-width: 680px; margin-bottom: 48px;
+  }
+
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+
+  .service-card {
+    background: var(--white); border: 1px solid var(--border-light);
+    border-radius: 12px; padding: 36px 28px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative; overflow: hidden;
+    text-align: center;
+  }
+
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--brand-medium);
+    transform: scaleX(0); transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+    border-color: var(--brand-accent);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-card-icon {
+    width: 52px; height: 52px; background: var(--light-bg);
+    border-radius: 12px; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .service-card-icon svg {
+    width: 26px; height: 26px; stroke: var(--brand-dark);
+    fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .service-card h3 {
+    font-size: 18px; font-weight: 700; color: var(--brand-dark); margin-bottom: 10px;
+  }
+
+  .service-card p {
+    font-size: 14px; color: var(--text-secondary); line-height: 1.7;
+  }
+
+  /* ── COMMERCIAL SERVICES ────────────────────── */
+  .commercial-section { background: var(--white); }
+
+  .comm-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px; font-weight: 700;
+    text-transform: uppercase; color: var(--brand-dark);
+    margin-bottom: 8px; letter-spacing: -0.5px;
+  }
+
+  .comm-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px; font-weight: 500;
+    color: var(--brand-accent); margin-bottom: 48px;
+  }
+
+  .commercial-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+
+  .commercial-text p {
+    font-size: 16px; color: var(--text-secondary);
+    line-height: 1.85; margin-bottom: 20px;
+  }
+
+  .commercial-services-list {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+  }
+
+  .commercial-tag {
+    padding: 8px 18px; border-radius: 100px;
+    background: var(--light-bg); border: 1px solid var(--border-color);
+    font-size: 13px; font-weight: 500; color: var(--brand-dark);
+    font-family: 'Poppins', sans-serif; transition: all 0.2s;
+  }
+  .commercial-tag:hover {
+    background: var(--brand-dark); color: var(--white); border-color: var(--brand-dark);
+  }
+
+  .commercial-image {
+    background: var(--brand-dark); border-radius: 14px;
+    aspect-ratio: 4/3; display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.25); font-size: 14px; font-family: 'Poppins', sans-serif;
+    position: relative; overflow: hidden;
+  }
+  .commercial-image::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-dark), var(--brand-accent), var(--brand-light));
+  }
+
+  /* ── WHY CHOOSE US — FLIP CARDS ─────────────── */
+  .why-section { background: var(--light-bg); }
+
+  .why-cards {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+
+  .flip-card {
+    perspective: 800px; height: 220px;
+  }
+
+  .flip-card-inner {
+    position: relative; width: 100%; height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+
+  .flip-card-front, .flip-card-back {
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    border-radius: 12px; border: 1px solid var(--border-light);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 28px 20px; text-align: center;
+  }
+
+  .flip-card-front { background: var(--white); }
+
+  .flip-card-back {
+    background: var(--brand-dark); color: var(--white);
+    transform: rotateY(180deg);
+    border-color: var(--brand-medium);
+  }
+
+  .flip-card-icon {
+    width: 56px; height: 56px; background: var(--light-bg);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+  .flip-card-icon svg {
+    width: 26px; height: 26px; stroke: var(--brand-dark);
+    fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .flip-card-front h3 {
+    font-size: 16px; font-weight: 700; color: var(--brand-dark);
+  }
+
+  .flip-card-back p {
+    font-size: 14px; color: rgba(255,255,255,0.8); line-height: 1.7;
+  }
+
+  /* ── PURPLE STANDARD SECTION ─────────────────── */
+  .tps-section {
+    background: var(--brand-dark); position: relative; overflow: hidden;
+  }
+  .tps-section::before {
+    content: ''; position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 10% 90%, rgba(255,255,255,0.03) 0%, transparent 50%),
+      radial-gradient(ellipse 40% 60% at 90% 20%, rgba(255,255,255,0.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .tps-inner {
+    position: relative; z-index: 2;
+    max-width: 800px; margin: 0 auto; text-align: center;
+  }
+
+  .tps-section .section-title { color: var(--white); font-size: 36px; }
+
+  .tps-badge-icon {
+    width: 72px; height: 72px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 28px;
+  }
+  .tps-badge-icon svg {
+    width: 36px; height: 36px; stroke: rgba(255,255,255,0.4);
+    fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .tps-desc {
+    font-size: 17px; color: rgba(255,255,255,0.65); line-height: 1.8;
+  }
+
+  /* ── SERVICE AREA ────────────────────────────── */
+  .area-section { background: var(--light-bg); }
+
+  .area-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+
+  .area-map {
+    width: 100%; aspect-ratio: 4/3;
+    background: var(--white); border: 1px solid var(--border-color);
+    border-radius: 14px; display: flex; align-items: center; justify-content: center;
+    color: var(--text-hint); font-size: 14px; font-family: 'Poppins', sans-serif;
+  }
+
+  .county-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+
+  .county-pill {
+    padding: 10px 20px; border-radius: 8px;
+    background: var(--white); border: 1px solid var(--border-color);
+    font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+    color: var(--brand-dark); transition: all 0.2s;
+  }
+  .county-pill:hover {
+    background: var(--brand-dark); color: var(--white); border-color: var(--brand-dark);
+  }
+
+  .area-note {
+    font-size: 14px; color: var(--text-muted);
+    font-style: italic; line-height: 1.6;
+  }
+
+  /* ── CONTACT SECTION ─────────────────────────── */
+  .contact-section { background: var(--white); }
+
+  .contact-grid {
+    display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: start;
+  }
+
+  .contact-copy h2 {
+    font-size: 28px; font-weight: 700; color: var(--brand-dark); margin-bottom: 8px;
+  }
+
+  .contact-copy .copy-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px; font-weight: 500;
+    color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;
+  }
+
+  .contact-copy > p {
+    font-size: 15px; color: var(--text-secondary);
+    line-height: 1.8; margin-bottom: 16px;
+  }
+
+  .contact-details {
+    display: flex; flex-direction: column; gap: 14px; margin-top: 32px;
+  }
+
+  .contact-detail-item {
+    display: flex; align-items: center; gap: 14px;
+    padding: 16px 20px; background: var(--light-bg);
+    border: 1px solid var(--border-color); border-radius: 8px;
+    text-decoration: none; color: inherit; transition: all 0.2s;
+  }
+  .contact-detail-item:hover {
+    border-color: var(--brand-accent);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  .detail-icon {
+    width: 40px; height: 40px; background: var(--brand-dark);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .detail-icon svg {
+    width: 20px; height: 20px; stroke: var(--white);
+    fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .detail-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 2px;
+  }
+
+  .detail-value { font-size: 15px; font-weight: 600; color: var(--brand-dark); }
+
+  .contact-form-wrap {
+    background: var(--white); border: 1px solid var(--border-color);
+    border-radius: 10px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  }
+
+  .form-header {
+    background: var(--brand-dark); padding: 24px 32px;
+  }
+  .form-header h3 {
+    font-size: 20px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.02em;
+    color: var(--white); margin-bottom: 4px;
+  }
+  .form-header p { font-size: 13px; color: rgba(255,255,255,0.5); }
+
+  .contact-form { padding: 28px 32px 32px; }
+  .form-row { margin-bottom: 16px; }
+  .form-row:last-child { margin-bottom: 0; }
+  .form-row-half { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; }
+
+  .form-group label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px; font-weight: 600;
+    color: var(--brand-dark); margin-bottom: 6px;
+  }
+  .required { color: #c62828; }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px; color: var(--text-primary);
+    background: var(--light-bg); border: 1px solid var(--border-color);
+    border-radius: 6px; padding: 11px 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none; width: 100%;
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+
+  .form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 14px center;
+    padding-right: 36px; cursor: pointer;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--brand-medium);
+    box-shadow: 0 0 0 3px rgba(51,51,51,0.08);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder { color: var(--text-hint); }
+
+  .form-submit {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--white); background: var(--brand-dark);
+    padding: 14px 32px; border-radius: 6px;
+    border: none; cursor: pointer; transition: all 0.25s; width: 100%;
+  }
+  .form-submit:hover {
+    background: var(--brand-medium);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  }
+  .form-submit svg {
+    width: 16px; height: 16px; fill: none; stroke: currentColor;
+    stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  }
+
+  .form-disclaimer {
+    font-size: 11px; line-height: 1.6; color: var(--text-muted);
+    margin-top: 16px; font-style: italic;
+  }
+  .form-disclaimer a { color: var(--brand-accent); text-decoration: underline; }
+
+  /* ── FOOTER ─────────────────────────────────── */
+  footer {
+    background: var(--brand-dark); color: rgba(255,255,255,0.6);
+    padding: 64px 48px 32px;
+  }
+
+  .footer-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px; margin-bottom: 48px;
+  }
+
+  .footer-brand p { font-size: 14px; line-height: 1.7; margin-top: 16px; }
+
+  .footer-logo {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+  }
+  .footer-logo-icon {
+    width: 32px; height: 32px; background: var(--white);
+    border-radius: 6px; display: flex; align-items: center; justify-content: center;
+  }
+  .footer-logo-icon svg { width: 18px; height: 18px; }
+
+  .footer-logo span {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; font-size: 16px; color: var(--white);
+  }
+
+  .footer-col h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 1px;
+    color: var(--white); margin-bottom: 16px;
+  }
+
+  .footer-col a {
+    display: block; font-size: 14px;
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    margin-bottom: 10px; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--white); }
+
+  .footer-bottom {
+    max-width: 1200px; margin: 0 auto; padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 14px;
+  }
+  .footer-bottom span { color: rgba(255,255,255,0.4); }
+
+  .footer-tps {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: rgba(255,255,255,0.3);
+  }
+  .footer-tps svg {
+    width: 18px; height: 18px; stroke: rgba(255,255,255,0.2);
+    fill: none; stroke-width: 1.5;
+  }
+
+  /* ── RESPONSIVE ─────────────────────────────── */
+  @media (max-width: 1024px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .commercial-grid { grid-template-columns: 1fr; }
+    .commercial-image { max-width: 480px; }
+    .why-cards { grid-template-columns: repeat(2, 1fr); }
+    .area-grid { grid-template-columns: 1fr; }
+    .area-map { max-width: 480px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image { max-width: 480px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    section { padding: 72px 24px; }
+    .container { padding: 0 24px; }
+    .hero-inner { padding: 60px 24px; }
+    .section-title, .res-label, .comm-label { font-size: 28px; }
+    .services-grid { grid-template-columns: 1fr; }
+    .why-cards { grid-template-columns: 1fr; }
+    .flip-card { height: 200px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .trust-bar-inner { gap: 24px; }
+    .form-row-half { grid-template-columns: 1fr; }
+    .contact-form { padding: 24px 20px 28px; }
+    .form-header { padding: 20px; }
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; flex-direction: column; gap: 0; }
+    .nav-links.open {
+      display: flex; position: fixed; top: 72px; left: 0; right: 0;
+      background: var(--brand-dark); padding: 24px; gap: 4px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 99;
+    }
+    .nav-links.open a {
+      display: block; padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 12px;
+    }
+    .nav-links.open .nav-cta {
+      margin-top: 12px; text-align: center;
+      border-radius: 6px; padding: 12px 24px !important;
+    }
+    .nav-hamburger { display: flex; }
+    .hero-ctas { flex-direction: column; align-items: stretch; }
+    .btn-primary, .btn-outline { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────── -->
+<nav>
+  <div class="nav-container">
+    <a href="/" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6M12 18v4M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M18 12h4M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
+      </div>
+      <span class="nav-logo-text">TPS Climate Solutions</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="/services/">Services</a></li>
+      <li><a href="/licenses/">Licenses & Certifications</a></li>
+      <li><a href="/service-area/">Service Area</a></li>
+      <li><a href="/contact/">Contact</a></li>
+      <li><a href="/contact/" class="nav-cta">Schedule Service</a></li>
+    </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge fade-up">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Powered by The Purple Standard
+      </div>
+      <h1 class="fade-up stagger-1">Residential & Commercial <em>HVAC & Refrigeration</em></h1>
+      <p class="hero-desc fade-up stagger-1">From AC installation and repair to commercial refrigeration systems, TPS Climate Solutions delivers comfort, efficiency, and reliability for Tampa Bay homeowners and business owners.</p>
+      <div class="hero-ctas fade-up stagger-2">
+        <a href="tel:8130000000" class="btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (813) XXX-XXXX
+        </a>
+        <a href="/contact/" class="btn-outline">
+          Schedule Service
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo fade-up stagger-2">
+      <div class="photo-placeholder">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        Technician at Florida home or branded truck
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ───────────────────────────────────── -->
+<div class="trust-bar fade-up">
+  <div class="trust-bar-inner">
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div><div class="trust-text">Licensed & Insured</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg></div>
+      <div><div class="trust-text">24/7 Emergency</div></div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+      <div><div class="trust-text">Financing Available</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ABOUT TPS CLIMATE SOLUTIONS ──────────────────── -->
+<section class="about-section">
+  <div class="container">
+    <h2 class="section-title fade-up">About TPS Climate Solutions</h2>
+
+    <div class="about-grid">
+      <div class="about-text fade-up">
+        <p>TPS Climate Solutions is a full-service HVAC and refrigeration company for residential and commercial customers across Tampa Bay and greater central Florida. Our growing service area includes Hillsborough, Pasco, Pinellas, Hernando, Polk, Sumter, Citrus, Marion, and Levy counties.</p>
+        <p>Too many HVAC installers disappear after the first year. They'll sell you a system, handle the warranty period, and then you're on your own.</p>
+        <p>TPS Climate Solutions is different. We're an end-to-end partner that stays with you from installation through the entire life of your system, with preventive maintenance plans that actually prevent problems.</p>
+        <p>We also recognize a growing need in Florida's commercial market for reliable refrigeration service. Restaurants, grocery stores, convenience stores, and warehouses depend on cold storage, and in Florida's heat, equipment failure must be avoided at all costs. TPS Climate Solutions brings that urgency and reliability to every refrigeration call.</p>
+        <p>We are TPS Climate Solutions because we are truly a solutions provider for HVAC and refrigeration, for residential and commercial, offering installation through long-term maintenance, cooling, and heating.</p>
+        <p style="font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; color: var(--brand-dark); margin-top: 8px;">One company. One standard.</p>
+        <div style="margin-top: 28px;">
+          <a href="tel:8130000000" class="btn-primary" style="background: var(--brand-dark); color: var(--white); box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call (813) XXX-XXXX
+          </a>
+        </div>
+      </div>
+      <div class="about-image fade-up stagger-1">
+        <div class="photo-placeholder" style="color: var(--text-hint);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:32px;height:32px;opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+          Team photo, service truck, or Florida property
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── RESIDENTIAL SERVICES ────────────────────────── -->
+<section class="residential-section">
+  <div class="container">
+    <h2 class="res-label fade-up">Residential Services</h2>
+    <p class="res-subtitle fade-up">Keeping Florida Homes Comfortable</p>
+    <p class="res-desc fade-up">From emergency AC repair to full system replacement, our team delivers reliable comfort with clear communication and no surprises.</p>
+
+    <div class="services-grid">
+      <div class="service-card fade-up">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M7 10h2M11 10h2M15 10h2"/></svg>
+        </div>
+        <h3>AC Installation & Replacement</h3>
+        <p>New system installation, equipment upgrades, and full replacements. Energy-efficient solutions sized for your home or property.</p>
+      </div>
+
+      <div class="service-card fade-up stagger-1">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>AC Repair & Diagnostics</h3>
+        <p>Fast, accurate diagnostics and repair for all major brands. Same-day emergency service available throughout Tampa Bay. We're the HVAC repair company Florida has been asking for.</p>
+      </div>
+
+      <div class="service-card fade-up stagger-2">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Preventive Maintenance</h3>
+        <p>Annual and semi-annual maintenance plans that extend system life, prevent breakdowns, and keep your warranty intact. Contact our office to get a tailored maintenance plan.</p>
+      </div>
+
+      <div class="service-card fade-up">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2"/></svg>
+        </div>
+        <h3>Indoor Air Quality</h3>
+        <p>Air purification, filtration upgrades, humidity control, and UV light systems for healthier indoor environments. Never settle on the air that you breathe.</p>
+      </div>
+
+      <div class="service-card fade-up stagger-1">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+        </div>
+        <h3>Duct Services</h3>
+        <p>Duct cleaning, sealing, repair, and replacement. Proper ductwork is the foundation of an efficient HVAC system.</p>
+      </div>
+
+      <div class="service-card fade-up stagger-2">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2v10"/><path d="M18.4 6.6a9 9 0 1 1-12.77.04"/></svg>
+        </div>
+        <h3>Heating Services</h3>
+        <p>Heat pump installation, furnace repair, and heating system maintenance. When Florida nights get cooler than expected, make sure you stay comfortable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMMERCIAL SERVICES ─────────────────────────── -->
+<section class="commercial-section">
+  <div class="container">
+    <h2 class="comm-label fade-up">Commercial Solutions</h2>
+    <p class="comm-subtitle fade-up">HVAC & Refrigeration for Business</p>
+
+    <div class="commercial-grid">
+      <div class="commercial-text fade-up">
+        <p>TPS Climate Solutions serves commercial and industrial clients throughout Tampa Bay with comprehensive HVAC and refrigeration services. From rooftop unit installation to walk-in cooler maintenance, we handle the full scope of climate control for your facility.</p>
+        <p>Restaurateurs, retailers, and warehouse teams rely on properly running HVAC and refrigeration systems. Downtime can mean unexpected costs, operational downtime, and liability.</p>
+
+        <div class="commercial-services-list">
+          <span class="commercial-tag">Commercial HVAC</span>
+          <span class="commercial-tag">Walk-In Coolers</span>
+          <span class="commercial-tag">Walk-In Freezers</span>
+          <span class="commercial-tag">Reach-In Units</span>
+          <span class="commercial-tag">Display Cases</span>
+          <span class="commercial-tag">Ice Machines</span>
+          <span class="commercial-tag">Rooftop Units</span>
+          <span class="commercial-tag">Building Automation</span>
+          <span class="commercial-tag">Preventive Maintenance</span>
+          <span class="commercial-tag">Emergency Repair</span>
+        </div>
+      </div>
+      <div class="commercial-image fade-up stagger-1">
+        <div class="photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:32px;height:32px;opacity:0.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+          Commercial HVAC or refrigeration installation
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US — FLIP CARDS ──────────────────── -->
+<section class="why-section">
+  <div class="container">
+    <h2 class="section-title fade-up">Why Choose TPS Climate Solutions</h2>
+    <p class="section-subtitle fade-up">Every job reflects The Purple Standard pledge and the principles that define how we operate, every day, without exception.</p>
+
+    <div class="why-cards">
+      <div class="flip-card fade-up">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="flip-card-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+            <h3>Clear Communication</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>You'll always know what's happening, what it costs, and when we'll be there. No surprises, no jargon.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-up stagger-1">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="flip-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <h3>Technology Driven</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Modern diagnostics, smart scheduling, and efficient systems. We use technology to deliver better outcomes, faster.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-up stagger-2">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="flip-card-icon"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h3>Professionalism in Action</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>Uniformed technicians, clean workspaces, respect for your home or business. We represent The Purple Standard.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-up stagger-3">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="flip-card-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+            <h3>Exceeding Expectations</h3>
+          </div>
+          <div class="flip-card-back">
+            <p>We fix the problem while making the entire experience better than you expected. That's the point. That's the Standard.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICE AREA ────────────────────────────────── -->
+<section class="area-section">
+  <div class="container">
+    <h2 class="section-title fade-up">Serving Greater Tampa Bay</h2>
+    <p class="section-subtitle fade-up">Residential and commercial HVAC and refrigeration service across central Florida. Based in Tampa Bay with teams ready to deploy throughout the region.</p>
+
+    <div class="area-grid">
+      <div class="area-map fade-up">
+        Service area map (SVG)
+      </div>
+      <div class="fade-up stagger-1">
+        <div class="county-pills">
+          <span class="county-pill">Hillsborough</span>
+          <span class="county-pill">Pasco</span>
+          <span class="county-pill">Pinellas</span>
+          <span class="county-pill">Hernando</span>
+          <span class="county-pill">Polk</span>
+          <span class="county-pill">Sumter</span>
+          <span class="county-pill">Citrus</span>
+          <span class="county-pill">Marion</span>
+          <span class="county-pill">Levy</span>
+        </div>
+        <p class="area-note">Don't see your area listed? Give us a call — we can provide quotes for additional Florida markets depending on your project.</p>
+        <div style="margin-top: 28px;">
+          <a href="/service-area/" class="btn-primary" style="background: var(--brand-dark); color: var(--white); box-shadow: 0 4px 16px rgba(0,0,0,0.15);">
+            View All Service Areas
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TPS CLIMATE SOLUTIONS: POWERED BY THE PURPLE STANDARD ── -->
+<section class="tps-section">
+  <div class="container">
+    <div class="tps-inner fade-up">
+      <div class="tps-badge-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <h2 class="section-title">TPS Climate Solutions: Powered by The Purple Standard</h2>
+      <p class="tps-desc">TPS Climate Solutions is part of The Purple Standard, a family of essential service companies in Florida committed to modernizing their trades and delivering exceptional customer experiences.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT SECTION ─────────────────────────────── -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-copy fade-up">
+        <h2>Ready to Get Started?</h2>
+        <p class="copy-subtitle">Whether you need a quote, have a question about your system, or want to schedule a service visit, we're here to help.</p>
+        <p>Fill out the form to tell us about your property and what you need. A member of our team will reach out within one business day to discuss your options.</p>
+        <p>Your home or business deserves the peace of mind that comes with knowing your HVAC and refrigeration systems are taken care of. TPS Climate Solutions is where comfort is done right.</p>
+
+        <div class="contact-details">
+          <a href="tel:8130000000" class="contact-detail-item">
+            <div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div><span class="detail-label">Call for Service</span><span class="detail-value">(813) XXX-XXXX</span></div>
+          </a>
+          <a href="mailto:info@tpsclimate.com" class="contact-detail-item">
+            <div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><span class="detail-label">Email</span><span class="detail-value">info@tpsclimate.com</span></div>
+          </a>
+          <div class="contact-detail-item">
+            <div class="detail-icon"><svg viewBox="0 0 24 24"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg></div>
+            <div><span class="detail-label">Hours</span><span class="detail-value">Mon–Fri 7am–6pm</span><br><span style="font-size:12px;color:var(--text-muted);">Emergency service 24/7</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrap fade-up stagger-1">
+        <div class="form-header">
+          <h3>Contact Us</h3>
+          <p>We'll get back to you within one business day.</p>
+        </div>
+        <div class="contact-form">
+          <div class="form-row form-row-half">
+            <div class="form-group">
+              <label for="first-name">First Name <span class="required">*</span></label>
+              <input type="text" id="first-name" name="first_name" placeholder="First" required>
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name <span class="required">*</span></label>
+              <input type="text" id="last-name" name="last_name" placeholder="Last" required>
+            </div>
+          </div>
+          <div class="form-row form-row-half">
+            <div class="form-group">
+              <label for="contact-email">Email <span class="required">*</span></label>
+              <input type="email" id="contact-email" name="email" placeholder="you@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone <span class="required">*</span></label>
+              <input type="tel" id="contact-phone" name="phone" placeholder="(813) 000-0000" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service-type">Service Type <span class="required">*</span></label>
+              <select id="service-type" name="service_type" required>
+                <option value="" disabled selected>Select one</option>
+                <option value="residential-ac">Residential AC</option>
+                <option value="residential-heating">Residential Heating</option>
+                <option value="maintenance-plan">Maintenance Plan</option>
+                <option value="indoor-air-quality">Indoor Air Quality</option>
+                <option value="duct-services">Duct Services</option>
+                <option value="commercial-hvac">Commercial HVAC</option>
+                <option value="commercial-refrigeration">Commercial Refrigeration</option>
+                <option value="emergency">Emergency Service</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-source">How Did You Hear About Us?</label>
+              <select id="contact-source" name="source">
+                <option value="" disabled selected>Select one</option>
+                <option value="google">Google</option>
+                <option value="social">Social Media</option>
+                <option value="chatgpt">ChatGPT</option>
+                <option value="referral">Friend or Family</option>
+                <option value="tps-company">Another Purple Standard Company</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-message">How Can We Help? <span class="required">*</span></label>
+              <textarea id="contact-message" name="message" rows="4" placeholder="Tell us about your home or business, your system, and what you need help with." required></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <button type="submit" class="form-submit">
+              Submit
+              <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+          </div>
+          <p class="form-disclaimer">By submitting this form and signing up for texts, you consent to receive text messages from TPS Climate Solutions at the number provided, including messages sent by auto dialer. Consent is not a condition of purchase. Msg &amp; data rates may apply. Msg frequency varies. Unsubscribe at any time by replying STOP. Reply HELP for help. <a href="/privacy-policy/">Privacy Policy</a> &amp; <a href="/terms-of-service/">Terms &amp; Conditions</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <div class="footer-logo-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"><path d="M12 2v6M12 18v4M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M18 12h4"/></svg>
+        </div>
+        <span>TPS Climate Solutions</span>
+      </div>
+      <p>Residential and commercial HVAC and refrigeration services for Tampa Bay and surrounding counties.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Residential</h4>
+      <a href="/services/ac-installation/">AC Installation</a>
+      <a href="/services/ac-repair/">AC Repair</a>
+      <a href="/services/maintenance/">Maintenance Plans</a>
+      <a href="/services/indoor-air-quality/">Indoor Air Quality</a>
+      <a href="/services/duct-services/">Duct Services</a>
+      <a href="/services/heating/">Heating</a>
+    </div>
+    <div class="footer-col">
+      <h4>Commercial</h4>
+      <a href="/services/commercial-hvac/">Commercial HVAC</a>
+      <a href="/services/commercial-refrigeration/">Refrigeration</a>
+      <a href="/services/commercial-maintenance/">Maintenance</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="/service-area/">Service Areas</a>
+      <a href="/licenses/">Licenses & Certifications</a>
+      <a href="/contact/">Contact</a>
+      <a href="tel:8130000000">(813) XXX-XXXX</a>
+      <a href="mailto:info@tpsclimate.com">info@tpsclimate.com</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 TPS Climate Solutions &bull; <a href="/privacy-policy/" style="color:rgba(255,255,255,0.4);">Privacy Policy</a> &bull; <a href="/terms-of-service/" style="color:rgba(255,255,255,0.4);">Terms of Service</a> &bull; <a href="/sitemap/" style="color:rgba(255,255,255,0.4);">Sitemap</a></span>
+    <div class="footer-tps">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      Powered by The Purple Standard
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  const hamburger = document.getElementById('navHamburger');
+  const navLinks = document.getElementById('navLinks');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+  }
+</script>
+</body>
+</html>
